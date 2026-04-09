@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TypeRacer — Speed Test</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body data-theme="dark">
+
+  <!-- Dark Mode Toggle -->
+  <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+    <span class="theme-icon">☀️</span>
+  </button>
+
+  <div class="app-wrapper">
+
+    <!-- Header -->
+    <header class="header">
+      <div class="logo">
+        <span class="logo-symbol">⌨</span>
+        <span class="logo-text">TypeRacer</span>
+      </div>
+      <p class="tagline">How fast can you really type?</p>
+    </header>
+
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+      <div class="stat-card" id="statTimer">
+        <span class="stat-value" id="timerDisplay">60</span>
+        <span class="stat-label">seconds</span>
+      </div>
+      <div class="stat-card highlight" id="statWpm">
+        <span class="stat-value" id="wpmDisplay">0</span>
+        <span class="stat-label">WPM</span>
+      </div>
+      <div class="stat-card" id="statMistakes">
+        <span class="stat-value" id="mistakesDisplay">0</span>
+        <span class="stat-label">mistakes</span>
+      </div>
+    </div>
+
+    <!-- Typing Area -->
+    <main class="typing-card">
+
+      <!-- Paragraph display -->
+      <div class="paragraph-container" id="paragraphContainer">
+        <div class="paragraph-text" id="paragraphText"></div>
+        <!-- Blinking cursor overlay -->
+        <div class="cursor-line" id="cursorLine"></div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-wrapper">
+        <textarea
+          id="typingInput"
+          class="typing-input"
+          placeholder="Start typing here…"
+          autocomplete="off"
+          autocorrect="off"
+          autocapitalize="off"
+          spellcheck="false"
+          rows="4"
+        ></textarea>
+        <div class="input-border-anim"></div>
+      </div>
+
+      <!-- Restart Button -->
+      <button class="restart-btn" id="restartBtn">
+        <span class="btn-icon">↺</span> New Test
+      </button>
+    </main>
+
+    <!-- Results Modal -->
+    <div class="results-overlay" id="resultsOverlay">
+      <div class="results-modal">
+        <div class="results-header">
+          <span class="results-icon">🏁</span>
+          <h2>Time's Up!</h2>
+        </div>
+        <div class="results-grid">
+          <div class="result-item">
+            <span class="result-val" id="finalWpm">0</span>
+            <span class="result-lbl">Words / Min</span>
+          </div>
+          <div class="result-item accent">
+            <span class="result-val" id="finalAccuracy">0%</span>
+            <span class="result-lbl">Accuracy</span>
+          </div>
+          <div class="result-item">
+            <span class="result-val" id="finalMistakes">0</span>
+            <span class="result-lbl">Mistakes</span>
+          </div>
+          <div class="result-item">
+            <span class="result-val" id="finalChars">0</span>
+            <span class="result-lbl">Chars Typed</span>
+          </div>
+        </div>
+        <button class="modal-restart-btn" id="modalRestartBtn">
+          Try Again
+        </button>
+      </div>
+    </div>
+
+  </div><!-- /.app-wrapper -->
+
+  <script src="script.js"></script>
+</body>
+</html>
